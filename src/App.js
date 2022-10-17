@@ -8,10 +8,6 @@ export default class App extends Component{
   constructor(){
     //primero llamamos al constructor superior (clas padre)
     super();
-    this.setState({
-      //aca listamos a las tareas
-      tasks: []  
-    });
     this.state = {};
     //llamamos a nuestro taskservice
     this.taskService = new TaskService();
