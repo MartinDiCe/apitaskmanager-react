@@ -5,12 +5,16 @@
 },
 {
     "id": 2,
+<<<<<<< HEAD
     "title": "me llegan al pincho tus datos locales",
+=======
+    "title": "segunda tarea",
+>>>>>>> dev
     "description": "tarea prueba" 
 },
 {
     "id": 3,
-    "title": "primera tarea",
+    "title": "tercera tarea",
     "description": "tarea prueba" 
 }
 ]
