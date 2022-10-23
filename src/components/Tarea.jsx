@@ -1,12 +1,13 @@
 import React from 'react'
-import './tarea.css'
+import '../styles/tarea.css'
 
-function Tarea({id,texto,completada,noCompletada}) {
+function Tarea({texto,id,completada,completarTarea,eliminarTarea}) {
+
   return (
-    <div className='tarea'>
-        {texto}
-        <h2>Estado de tarea:{completada}</h2>
-    </div>
+    <div>
+       <div onClick={()=>completarTarea(id)} className={completada ? 'completado' : 'incompleto'}>{texto}</div>
+       <button onClick={()=>eliminarTarea(id)}>Eliminar Tarea</button> 
+     </div>
   )
 }
 

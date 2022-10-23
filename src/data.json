@@ -1,11 +1,11 @@
 [{
         "id": 1,
-        "title": "el que hizo este json es gay",
+        "title": "primera prueba",
         "description": "tarea prueba" 
 },
 {
     "id": 2,
-    "title": "me llegan al pincho tus datos locales",
+    "title": "segunda prueba",
     "description": "tarea prueba" 
 },
 {

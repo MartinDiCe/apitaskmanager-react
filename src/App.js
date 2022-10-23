@@ -1,10 +1,10 @@
 import { Component } from 'react';
-import './App.css';
-import Tarea from '../src/components/Tarea.jsx';
+import ListaTareasApp from './components/ListaTareasApp.jsx';
 // import { TaskService } from './service/TaskService';
 
 //creamos el main app y extendemos del componente
 export default class App extends Component{
+
 //   //creamos un constructor
 //   constructor(){
 //     //primero llamamos al constructor superior (clas padre)
@@ -20,17 +20,12 @@ export default class App extends Component{
 // })
 
 //Implementaremos las libreria de la plantilla primereact (metodo render)
+
 render()
 {
   return(
     <div>
-      <div className='fondo'>
-        <h1>Hola mundo</h1>
-        <h2>RIVALDO CABRO</h2>
-      </div>
-   
-      <Tarea texto={'Soy un tarea'} completada={15}></Tarea>
-      <Tarea texto={'Soy un tarea'} completada={15}></Tarea>
+        <ListaTareasApp></ListaTareasApp>
     </div>
   );
 }
