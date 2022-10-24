@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import ListaTareasApp from './components/ListaTareasApp.jsx';
+import './styles/app.css'
 // import { TaskService } from './service/TaskService';
 
 //creamos el main app y extendemos del componente
@@ -24,7 +25,7 @@ export default class App extends Component{
 render()
 {
   return(
-    <div>
+    <div className='background'>
         <ListaTareasApp></ListaTareasApp>
     </div>
   );

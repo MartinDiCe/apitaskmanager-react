@@ -1,3 +1,25 @@
-.contenedor-tareas{
-    background-color: green;
+* {
+    margin: 0;
+    padding: 0;
 }
+.container {
+    background-color: #363636;
+    height: 500px;
+    width: 700px;
+    margin: 50px auto;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    background-color: #292929;
+}
+
+
