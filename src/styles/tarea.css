@@ -1,0 +1,8 @@
+.completado{
+    display: inline;
+    background-color: #5cb85c;
+}
+.incompleto{
+    display: inline;
+    background-color: #d9534f;
+}

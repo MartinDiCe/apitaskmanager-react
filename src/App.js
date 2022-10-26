@@ -1,6 +1,6 @@
 import { Column, DataTable } from 'primereact';
 import { Component } from 'react';
-import './App.css';
+import ListaTareasApp from './components/ListaTareasApp.jsx';
 import { TaskService } from './service/TaskService';
 
 //creamos el main app y extendemos del componente
@@ -19,7 +19,9 @@ this.taskService.getTasks().then(data => this.setState({tasks: data}))
 }
 
 //Implementaremos las libreria de la plantilla primereact (metodo render)
-render(){
+
+render()
+{
   return(
   <DataTable value={this.state.tasks}>
     <Column field="id" header="ID"></Column>
@@ -33,5 +35,7 @@ render(){
   </DataTable>
   );
 }
+
 }
+
 
