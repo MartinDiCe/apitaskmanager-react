@@ -1,32 +1,29 @@
-import { Column, DataTable } from 'primereact';
-import { Component } from 'react';
+import {React,useState,useEffect} from 'react';
 import ListaTareasApp from './components/ListaTareasApp.jsx';
-import { TaskService } from './service/TaskService';
+import  Client  from './service/Client';
 
-//creamos el main app y extendemos del componente
-export default class App extends Component{
-  //creamos un constructor
-  constructor(){
-    //primero llamamos al constructor superior (clas padre)
-    super();
-    this.state = {};
-    //llamamos a nuestro taskservice
-    this.taskService = new TaskService();
+
+
+export default function App() {
+
+  const [tasks, setTasks] = useState([]);
+
+  const getTasks = async ()=>{
+    let axios = await new Client().getTasks();
+    setTasks(axios);
   }
-//Metodos de ciclo de vida
-componentDidMount(){
-this.taskService.getTasks().then(data => this.setState({tasks: data}))
+
+  useEffect(() => {
+    getTasks();
+  }, [])
+  
+
+  return (
+    <div>
+    <ListaTareasApp tasks={tasks}></ListaTareasApp>
+    </div>
+  )
 }
 
-//Implementaremos las libreria de la plantilla primereact (metodo render)
-
-render()
-{
-  return(
-  <></>
-  );
-}
-
-}
 
 

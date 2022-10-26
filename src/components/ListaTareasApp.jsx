@@ -3,7 +3,7 @@ import FormularioTareas from './FormularioTareas'
 import { useState } from 'react';
 import Tarea from './Tarea';
 
-function ListaTareasApp() {
+function ListaTareasApp({tasks}) {
 
   const [tareas, setTareas] = useState([]);
 
@@ -35,7 +35,7 @@ function ListaTareasApp() {
        <h2>TaskManager</h2> 
       <FormularioTareas agregarTarea={agregarTarea}/>
       <div className='contenedor-tareas'>
-          {tareas.map((tarea) =>
+          {/* {tareas.map((tarea) =>
             <Tarea 
             texto={tarea.texto}
             key={tarea.id}
@@ -43,6 +43,15 @@ function ListaTareasApp() {
             completada={tarea.completada}
             completarTarea ={completarTarea}
             eliminarTarea={eliminarTarea}
+          ></Tarea>)} */}
+           {tasks.map((tarea) =>
+            <Tarea 
+            texto={tarea.description}
+            key={tarea.id}
+            id={tarea.id}
+            completada={tarea.completed}
+            // completarTarea ={completarTarea}
+            // eliminarTarea={eliminarTarea}
           ></Tarea>)}
       </div>
     </div>
