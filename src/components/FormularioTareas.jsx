@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 
 function FormularioTareas({agregarTarea}) {
@@ -9,9 +9,8 @@ function FormularioTareas({agregarTarea}) {
     const HandleSubmit = (e) =>{
         e.preventDefault();
         let nuevaTarea = {
-            id:new Date().getTime(),
             description:descripcion,
-            title:titulo
+            title:titulo,
         }
         agregarTarea(nuevaTarea);
         ResetInput();

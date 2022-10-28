@@ -3,20 +3,65 @@ import axios from "axios";
 export default class Client{
     
     baseURL = "http://localhost:8080/tasks"
-    getTasks(){
-        //utilizamos axios para responder la data de la api
-        return axios.get(this.baseURL).then(res=>{return res.data});
+
+    async getTasks(setLoading,setError,setTareas){
+        
+        setLoading(true);
+        
+        try {
+
+            let res = await axios.get(this.baseURL);
+            setTareas(res.data);
+
+        } catch (error) {
+
+            console.log(error.request)
+            setError(error.request);
+
+        }
+
+        setLoading(false);
     }
 
-    delTasks(id){
-        return axios.delete(`http://localhost:8080/tasks/deleteTask/${id}`);
+    async delTasks(id,setError){
+
+        try {
+
+           let res = await axios.delete(`${this.baseURL}/deleteTask/${id}`);
+
+        } catch (error) {
+
+            setError(error.request)
+
+        }
+
     }
 
-    postTasks(data){
-        return axios.post('http://localhost:8080/tasks',data);
+    async postTasks(data,dataArray,setData,setError){
+
+        try {
+
+            let res = await axios.post(this.baseURL,data);
+            
+            let nuevaTarea = [...dataArray,res.data];
+            setData(nuevaTarea);
+
+        } catch (error) {
+
+            setError(error.request);
+        }
+
     }
 
-    patchTask(id){
-        return axios.patch(`http://localhost:8080/tasks/mark-as-completed/${id}`)
+    async patchTask(id,setError){
+        try {
+
+            let res = await axios.patch(`${this.baseURL}/mark-as-completed/${id}`)
+
+        } catch (error) {
+
+            setError(error.request);
+
+        }
     }
 }

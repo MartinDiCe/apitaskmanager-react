@@ -3,45 +3,49 @@ import FormularioTareas from './FormularioTareas'
 import { useState,useEffect } from 'react';
 import Tarea from './Tarea';
 import  Client  from '../service/Client';
+import Loader from './Loader';
+import ErrorMessage from './ErrorMessage';
 
 function ListaTareasApp() {
 
   const [tareas, setTareas] = useState([]);
 
+  const [loading, setLoading] = useState(false);
+
+  const [error, setError] = useState(null);
+
   let client = new Client();
 
-  const getTasks = async ()=>{
-    let axios = await client.getTasks();
-    setTareas(axios);
-  }
-
   useEffect(() => {
-    getTasks();
-  }, [tareas])
+    client.getTasks(setLoading,setError,setTareas);
+  }, [])
 
   const agregarTarea = (tarea)=>{
-    client.postTasks(tarea);
-    let nuevaTarea = [...tareas,tarea];
-    setTareas(nuevaTarea);
+    client.postTasks(tarea,tareas,setTareas,setError);
   }
 
   const eliminarTarea = (id)=>{
-    client.delTasks(id);
-    const tareasActualizadas = tareas.filter(tarea=>tarea.id !== id);
-    setTareas(tareasActualizadas);
+    let bool = window.confirm('Esta seguro de que desea eliminar la tarea?');
+
+    if(bool){
+      client.delTasks(id,setError);
+      const tareasActualizadas = tareas.filter(tarea=>tarea.id !== id);
+      setTareas(tareasActualizadas);
+      alert('Eliminado con exito!')
     }
+  }
 
   const completarTarea = (id)=>{
-      
-      client.patchTask(id);
-      const tareasActualizadas = tareas.map(tarea=>{
+      client.patchTask(id,setError);
 
+      const tareasActualizadas = tareas.map(tarea=>{
         if(tarea.id === id){
-          tarea.completed = !tarea.completed;
+          if(tarea.completed !== true){
+            tarea.completed = true;
+          }
         }
         return tarea
       })
-
       setTareas(tareasActualizadas);
   }
 
@@ -50,22 +54,15 @@ function ListaTareasApp() {
        <h2>TaskManager</h2> 
       <FormularioTareas agregarTarea={agregarTarea}/>
       <div className='contenedor-tareas'>
-          
-          {/* {tareas.map((tarea) =>
-            <Tarea 
-            texto={tarea.texto}
-            key={tarea.id}
-            id={tarea.id}
-            completada={tarea.completada}
-            completarTarea ={completarTarea}
-            eliminarTarea={eliminarTarea}
-          ></Tarea>)} */}
-
+        {loading ? <Loader></Loader>: undefined}
+        {error ? <ErrorMessage error={error}></ErrorMessage>: undefined}
            {tareas.length === 0 ? <h2>Datos no encontrados</h2> :
            tareas.map((tarea) =>
             <Tarea 
             titulo={tarea.title}
             descripcion={tarea.description}
+            fechaCreada={tarea.createDate}
+            fechaEstimada={tarea.estimatedDate}
             key={tarea.id}
             id={tarea.id}
             completada={tarea.completed}
