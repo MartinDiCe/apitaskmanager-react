@@ -25,6 +25,7 @@ function ListaTareasApp() {
   }
 
   const eliminarTarea = (id)=>{
+    
     let bool = window.confirm('Esta seguro de que desea eliminar la tarea?');
 
     if(bool){
