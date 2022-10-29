@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import '../styles/formulario_tareas.css';
 
 function FormularioTareas({agregarTarea}) {
 
@@ -18,9 +19,9 @@ function FormularioTareas({agregarTarea}) {
     const ResetInput = (e)=> setInput('');
 
   return (
-    <form onSubmit={HandleSubmit}>
-        <input type="text" placeholder='Escribe una tarea' value={input} onChange={(e)=>setInput(e.target.value)} required />
-        <input type="submit" value='Agregar una tarea'/>
+    <form className='container2' onSubmit={HandleSubmit}>
+        <input className='form_input' type="text" placeholder='Escribe una tarea...' value={input} onChange={(e)=>setInput(e.target.value)} required />
+        <input className='form_btn' type="submit" value='Agregar Tarea'/>
     </form>
   )
 }

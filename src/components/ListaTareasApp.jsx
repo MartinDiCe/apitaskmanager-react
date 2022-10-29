@@ -2,6 +2,7 @@ import React from 'react'
 import FormularioTareas from './FormularioTareas'
 import { useState } from 'react';
 import Tarea from './Tarea';
+import '../styles/lista_tareas_app.css';
 
 function ListaTareasApp() {
 
@@ -31,8 +32,8 @@ function ListaTareasApp() {
   }
 
   return (
-    <div>
-       <h2>TaskManager</h2> 
+    <div className='container'>
+      <h2>Lista De Tareas</h2>
       <FormularioTareas agregarTarea={agregarTarea}/>
       <div className='contenedor-tareas'>
           {tareas.map((tarea) =>
