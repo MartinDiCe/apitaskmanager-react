@@ -1,6 +1,13 @@
-import { Column, DataTable } from 'primereact';
-import { Component } from 'react';
+import {React} from 'react';
 import ListaTareasApp from './components/ListaTareasApp.jsx';
+<<<<<<< HEAD
+export default function App() {
+  return (
+    <div>
+    <ListaTareasApp></ListaTareasApp>
+    </div>
+  )
+=======
 import './styles/app.css'
 // import { TaskService } from './service/TaskService';
 
@@ -30,6 +37,8 @@ render()
   );
 }
 
+>>>>>>> dev
 }
+
 
 
