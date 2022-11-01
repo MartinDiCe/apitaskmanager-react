@@ -1,7 +1,15 @@
-import { Column, DataTable } from 'primereact';
-import { Component } from 'react';
-import './App.css';
-import { TaskService } from './service/TaskService';
+import {React} from 'react';
+import ListaTareasApp from './components/ListaTareasApp.jsx';
+<<<<<<< HEAD
+export default function App() {
+  return (
+    <div>
+    <ListaTareasApp></ListaTareasApp>
+    </div>
+  )
+=======
+import './styles/app.css'
+// import { TaskService } from './service/TaskService';
 
 //creamos el main app y extendemos del componente
 export default class App extends Component{
@@ -24,19 +32,18 @@ this.taskService.getTasks()
 }
 
 //Implementaremos las libreria de la plantilla primereact (metodo render)
-render(){
+
+render()
+{
   return(
-  <DataTable value={this.state.tasks}>
-    <Column field="id" header="ID"></Column>
-    <Column field="title" header="TITLE"></Column>
-    <Column field="description" header="DESCRIPTION"></Column>
-    <Column field="createDate" header="CREATE DATE"></Column>
-    <Column field="estimatedDate" header="ESTIMATED DATE"></Column>
-    <Column field="finalizationDate" header="FINALIZATION DATE"></Column>
-    <Column field="complete" header="COMPLETED"></Column>
-    <Column field="taskStatus" header="STATUS"></Column>
-  </DataTable>
+    <div className='background'>
+        <ListaTareasApp></ListaTareasApp>
+    </div>
   );
 }
+
+>>>>>>> dev
 }
+
+
 
