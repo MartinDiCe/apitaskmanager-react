@@ -15,7 +15,12 @@ export default class App extends Component{
   }
 //Metodos de ciclo de vida
 componentDidMount(){
-this.taskService.getTasks().then(data => this.setState({tasks: data}))
+this.taskService.getTasks()
+.then(data => {
+  console.log(data)
+  this.setState({tasks: data})
+})
+  //this.setState({tasks: data}))
 }
 
 //Implementaremos las libreria de la plantilla primereact (metodo render)
