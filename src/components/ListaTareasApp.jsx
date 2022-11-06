@@ -2,13 +2,11 @@ import React from 'react'
 import FormularioTareas from './FormularioTareas'
 import { useState,useEffect } from 'react';
 import Tarea from './Tarea';
-<<<<<<< HEAD
 import  Client  from '../service/Client';
 import Loader from './Loader';
 import ErrorMessage from './ErrorMessage';
-=======
-import '../styles/lista_tareas_app.css';
->>>>>>> dev
+import '../styles/lista_tareas_app.css'
+
 
 function ListaTareasApp() {
 
@@ -55,7 +53,7 @@ function ListaTareasApp() {
   }
 
   return (
-    <div className='container'>
+    <div className='task-manager_container' >
       <h2>Lista De Tareas</h2>
       <FormularioTareas agregarTarea={agregarTarea}/>
       <div className='contenedor-tareas'>
