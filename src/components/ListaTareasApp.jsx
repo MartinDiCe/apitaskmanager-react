@@ -2,13 +2,12 @@ import React from 'react'
 import FormularioTareas from './FormularioTareas'
 import { useState,useEffect } from 'react';
 import Tarea from './Tarea';
-<<<<<<< HEAD
 import  Client  from '../service/Client';
 import Loader from './Loader';
 import ErrorMessage from './ErrorMessage';
-=======
+
 import '../styles/lista_tareas_app.css';
->>>>>>> dev
+
 
 function ListaTareasApp() {
 
