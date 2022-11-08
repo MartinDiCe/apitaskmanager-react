@@ -1,9 +1,7 @@
-.background {
+body {
   background: linear-gradient(90deg, rgb(37, 32, 32) 0%, rgb(36, 28, 54) 100%);
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 5rem;
 }
 

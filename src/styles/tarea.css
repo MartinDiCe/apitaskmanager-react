@@ -1,68 +1,46 @@
+
 .tarea {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 2.5rem;
+    margin: auto;
+    width: 80%;
     border: none;
-    font-size: 20px;
-    margin:20px 0;    
+    margin-top: 1rem; 
+    background-color: #555555;
 }
-
-.tarea div {
-    display: flex;
-    justify-content: space-between;
-    
-
-}
-.completado {
-    padding: 1px;
-    margin-right: 1rem; 
-    color: #89FF95;
-    /* border-radius:3px; */
-
-}
-
-.incompleto {
-    padding: 1px;
-    margin-right: 1rem;
-    color: #FF6B6B;
-    /* border-radius: 3px; */
-}
-
 .tarea-container {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 60%;
-    height: 100%;
-    background-color: #555555;
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    height: 2rem;
     color: white;
+    width: 100%;
     font-weight: 300;
-    padding-left: 10px;
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
+    align-items: center;
 }
-
-.open-btn{
-    color: white;
-    background-color: #555555;
-    height: 2.5rem;
-    width: 1.2rem;
-    font-size: 15px;
-    border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px;
-}
-.tarea-btn{
+.tarea-eliminar-btn{
     background-color: #7C7C7C; 
     color: white; 
-    width: 3rem;   
-    height: 2.5rem; 
+    width: 3rem;  
     border: none;
     font-size: 20px; 
     border-radius: 2px;
     cursor: pointer;
 }
-.btn-icon:hover {
-    cursor: pointer;
-  }
+.completado {
+    color: #89FF95;
+}
+
+.incompleto {
+    color: #FF6B6B;
+}
+.icono-chequeador{
+    padding: 1px;
+    cursor: pointer;  
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    background-color: #363636;
+    justify-self: center;
+}
+.flecha-btn{
+    justify-self: center;
+}
+
