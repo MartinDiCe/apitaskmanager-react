@@ -1,0 +1,25 @@
+.descripcion{
+    background-color:#292929;
+    border-radius: 3px;
+    color: white;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 0rem;
+    transition: 0.2s all;
+}
+
+.descripcion-open{
+    height: 6.5rem;
+    transition:0.2 all;
+}
+
+.descripcion-table{
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+
+

@@ -1,36 +1,14 @@
-import { Component } from 'react';
+import {React} from 'react';
 import ListaTareasApp from './components/ListaTareasApp.jsx';
-import './styles/app.css'
-// import { TaskService } from './service/TaskService';
+import '../src/styles/app.css'
 
-//creamos el main app y extendemos del componente
-export default class App extends Component{
-
-//   //creamos un constructor
-//   constructor(){
-//     //primero llamamos al constructor superior (clas padre)
-//     super();
-//     this.state = {};
-//     //llamamos a nuestro taskservice
-//     this.taskService = new TaskService();
-//   }
-// //Metodos de ciclo de vida
-// componentDidMount(){
-// this.taskService.getTasks().then(data => {
-//   console.log(data);
-// })
-
-//Implementaremos las libreria de la plantilla primereact (metodo render)
-
-render()
-{
-  return(
+export default function App() {
+  return (
     <div className='background'>
-        <ListaTareasApp></ListaTareasApp>
+    <ListaTareasApp></ListaTareasApp>
     </div>
-  );
+  )
 }
 
-}
 
 
