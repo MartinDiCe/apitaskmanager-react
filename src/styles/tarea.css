@@ -1,35 +1,46 @@
+
 .tarea {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 2.5rem;
+    margin: auto;
+    width: 80%;
     border: none;
-    font-size: 20px;
-    font-weight: 100;
-    margin:20px 0;
-}
-
-.tarea-container {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 60%;
-    height: 100%;
+    margin-top: 1rem; 
     background-color: #555555;
+}
+.tarea-container {
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    height: 2rem;
     color: white;
+    width: 100%;
     font-weight: 300;
-    padding-left: 10px;
-    border-radius: 3px;
+    align-items: center;
 }
-
-
-.tarea-btn{
-    background-color: #7C7C7C;
-    color: white;
-    width: 10%;  
-    height: 2.5rem;
+.tarea-eliminar-btn{
+    background-color: #7C7C7C; 
+    color: white; 
+    width: 3rem;  
     border: none;
-    font-size: 20px;
-    border-radius: 3px;
+    font-size: 20px; 
+    border-radius: 2px;
+    cursor: pointer;
 }
+.completado {
+    color: #89FF95;
+}
+
+.incompleto {
+    color: #FF6B6B;
+}
+.icono-chequeador{
+    padding: 1px;
+    cursor: pointer;  
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    background-color: #363636;
+    justify-self: center;
+}
+.flecha-btn{
+    justify-self: center;
+}
+

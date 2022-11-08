@@ -1,6 +1,7 @@
-.background {
-  height: 100vh;
-  width: 100vw;
-  padding: 10px;
-  background-color: #1F271B;
+body {
+  background: linear-gradient(90deg, rgb(37, 32, 32) 0%, rgb(36, 28, 54) 100%);
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
 }
+
